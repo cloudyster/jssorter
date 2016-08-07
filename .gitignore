@@ -1,0 +1,8 @@
+/clippy-lib
+/.idea
+/build
+/dist
+/ide-lib
+/build.properties
+/ivyidea.properties
+/out

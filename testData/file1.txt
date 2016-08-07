@@ -1,0 +1,20 @@
+/* @flow */
+
+import React, { Element, Component, PropTypes } from 'react';
+import PointsView from './PointsView.ios';
+import SubmissionRowView from './SubmissionRowView.ios';
+import RowSeparatorView from '../RowSeparatorView.ios';
+
+import { fetchBatch } from '../../../actions/UserActions';
+import Styles from '../../../styles/views/mysubmissions/MySubmissionsView.ios';
+import { ListView, View, RefreshControl } from 'react-native';
+
+import TabHeader from '../../lib/TabHeader.ios';
+import { connect } from 'react-redux';
+import AppState from '../../../data/AppState';
+
+const dataSource = new ListView.DataSource({
+    rowHasChanged: (r1: Object, r2: Object): boolean => {
+    return (r1.submissionKey !== r2.submissionKey) || (r1.state !== r2.state);
+}
+});

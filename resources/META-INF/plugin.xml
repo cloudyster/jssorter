@@ -1,0 +1,38 @@
+<idea-plugin version="2">
+  <id>JSImport</id>
+  <name>JSImport</name>
+  <version>1.0</version>
+  <vendor email="jliu@indeed.com" url="http://www.indeed.com">Indeed</vendor>
+
+  <description><![CDATA[
+      Sort js imports according to ESLint import-sort
+    ]]></description>
+
+  <change-notes><![CDATA[
+      1.0 release<br>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="141.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+      <action id="JSImport.Sorter" class="com.indeed.jsimport.actions.JSImportSorter" text="Sort JS Imports"
+              description="Sort JS Imports according to ESLint&#39;s import-sort">
+          <add-to-group group-id="CodeMenu" anchor="last"/>
+          <keyboard-shortcut keymap="$default" first-keystroke="shift alt J"/>
+      </action>
+  </actions>
+
+</idea-plugin>
