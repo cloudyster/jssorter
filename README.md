@@ -2,8 +2,7 @@
 See [ESlint sort-imports](http://eslint.org/docs/rules/sort-imports)
 
 ## How to Install
-This plugin is not yet in the Indeed repository. 
-If you're interested in trying it, [download the jar file](https://code.corp.indeed.com/jliu/JSImport/blob/master/JSImport.jar) and from Intellij use the **install plugin from disk** option.
+Search **JSImport** from the Indeed respository.
 
 ## How to Use It
 When you're editing a js file, you will find a new **Sort JS Import** option under the **Code** menu. Or hit *Shift+Alt+J*.
