@@ -1,4 +1,4 @@
-package com.indeed.jsimport.actions;
+package com.indeed.jssorter.actions;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -35,11 +35,9 @@ public class JSImportSorter extends AnAction {
 
     @Override
     public void update(AnActionEvent e) {
+        final Presentation presentation = e.getPresentation();
         final VirtualFile file = e.getData(PlatformDataKeys.VIRTUAL_FILE);
-        if (file != null) {
-            final Presentation presentation = e.getPresentation();
-            presentation.setEnabled("js".equals(file.getExtension()));
-        }
+        presentation.setEnabled((file != null) && ("js".equals(file.getExtension())));
     }
 
     @Override

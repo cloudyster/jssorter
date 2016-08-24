@@ -1,4 +1,4 @@
-package com.indeed.jsimport.actions;
+package com.indeed.jssorter.actions;
 
 import junit.framework.TestCase;
 import org.junit.Test;

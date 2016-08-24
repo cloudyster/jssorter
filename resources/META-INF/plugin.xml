@@ -1,11 +1,11 @@
 <idea-plugin version="2">
-  <id>JSImport</id>
-  <name>JSImport</name>
+  <id>JSSorter</id>
+  <name>JSSorter</name>
   <version>1.0</version>
   <vendor email="jliu@indeed.com" url="http://www.indeed.com">Indeed</vendor>
 
   <description><![CDATA[
-      Sort js imports according to ESLint import-sort
+      Several sorters mainly for js files
     ]]></description>
 
   <change-notes><![CDATA[
@@ -28,11 +28,16 @@
 
   <actions>
     <!-- Add your actions here -->
-      <action id="JSImport.Sorter" class="com.indeed.jsimport.actions.JSImportSorter" text="Sort JS Imports"
-              description="Sort JS Imports according to ESLint&#39;s import-sort">
-          <add-to-group group-id="CodeMenu" anchor="last"/>
-          <keyboard-shortcut keymap="$default" first-keystroke="shift alt J"/>
-      </action>
+    <action id="JSSorter.sortImports" class="com.indeed.jssorter.actions.JSImportSorter" text="Sort JS Imports"
+          description="Sort JS Imports according to ESLint&#39;s import-sort">
+      <add-to-group group-id="CodeMenu" anchor="last"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="shift alt J"/>
+    </action>
+    <action id="JSSorter.sortLines" class="com.indeed.jssorter.actions.JSLineSorter" text="Sort Selected Lines"
+            description="Sort selected lines.">
+      <add-to-group group-id="CodeMenu" anchor="last"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="shift alt N"/>
+    </action>
   </actions>
 
 </idea-plugin>
