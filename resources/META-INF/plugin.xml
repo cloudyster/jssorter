@@ -5,7 +5,13 @@
   <vendor email="jliu@indeed.com" url="http://www.indeed.com">Indeed</vendor>
 
   <description><![CDATA[
-      Several sorters mainly for js files
+      Sorters for javascript.<br><br>
+      Find the options under the Code Menu.<br>
+      <ul>
+        <li>Sort imports</li>
+        <li>Sort selected lines</li>
+        <li>Sort switch cases</li>
+      </ul>
     ]]></description>
 
   <change-notes><![CDATA[
@@ -37,6 +43,11 @@
             description="Sort selected lines.">
       <add-to-group group-id="CodeMenu" anchor="last"/>
       <keyboard-shortcut keymap="$default" first-keystroke="shift alt N"/>
+    </action>
+    <action id="JSSorter.sortSwitch" class="com.indeed.jssorter.actions.JSSwitchSorter" text="Sort Switch Cases"
+            description="Sort switch cases.">
+      <add-to-group group-id="CodeMenu" anchor="last"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="shift alt S"/>
     </action>
   </actions>
 
