@@ -1,5 +1,6 @@
 # JS Sorters
 Implemented sorters:
+- Switch Sorter
 - Line Sorter
 - JS Import Sorter
 
@@ -32,4 +33,8 @@ StyleSheet,
 Text } from 'react-native';
 ```
 
+## Switch Sorter
+Sort switch cases alphabetically.
 
+###### How to Use It
+Place the cursor under the _switch_ word, you will find a new **Sort Switch Cases** under the **Code** menu. Or hit *Shift+Alt+S*.
