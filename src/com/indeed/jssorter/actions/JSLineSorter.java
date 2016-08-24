@@ -1,10 +1,9 @@
 package com.indeed.jssorter.actions;
 
+import com.indeed.jssorter.utils.DocumentUtil;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.Presentation;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
@@ -51,19 +50,17 @@ public class JSLineSorter extends AnAction {
         }
 
         final Document document = editor.getDocument();
-        final String[] lines = document.getText().split("\n");
-
         final SelectionModel selectionModel = editor.getSelectionModel();
-        final VisualPosition startPosition = selectionModel.getSelectionStartPosition();
-        final VisualPosition endPosition = selectionModel.getSelectionEndPosition();
-        if (startPosition == null || endPosition == null) {
+        final int startLine = document.getLineNumber(selectionModel.getSelectionStart());
+        final int endLine = document.getLineNumber(selectionModel.getSelectionEnd());
+
+        if (startLine == endLine) {
             return;
         }
-        final int startLine = startPosition.getLine();
-        final int endLine = endPosition.getLine();
 
+        final String[] lines = document.getText().split("\n");
         final String sortedLines = sortAndGetLines(lines, startLine, endLine);
-        replaceWithSortedLines(project, document, sortedLines, startLine, endLine);
+        DocumentUtil.replaceWithText(project, document, sortedLines, startLine, endLine, "Sort selected lines");
     }
 
     private String sortAndGetLines(final String[] lines, final int startLine, final int endLine) {
@@ -82,39 +79,5 @@ public class JSLineSorter extends AnAction {
         sb.deleteCharAt(sb.length() - 1);
 
         return sb.toString();
-    }
-
-    private void replaceWithSortedLines(
-            final Project project,
-            final Document document,
-            final String sortedLines,
-            final int startLine,
-            final int endLine
-    ) {
-        if (sortedLines == null || (startLine == endLine)) {
-            return;
-        }
-
-        final int lineStartOffset = document.getLineStartOffset(startLine);
-        final int lineEndOffset = document.getLineEndOffset(endLine);
-
-        final Runnable runner = new Runnable() {
-            @Override
-            public void run() {
-                document.replaceString(lineStartOffset, lineEndOffset, sortedLines);
-            }
-        };
-
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                CommandProcessor.getInstance().executeCommand(project, new Runnable() {
-                    @Override
-                    public void run() {
-                        ApplicationManager.getApplication().runWriteAction(runner);
-                    }
-                }, "Sort Lines", null);
-            }
-        });
     }
 }
