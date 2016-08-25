@@ -2,13 +2,13 @@
   <id>JSSorter</id>
   <name>JSSorter</name>
   <version>1.0</version>
-  <vendor email="loevaljh@gmail.com">Sprite CC</vendor>
+  <vendor email="loevaljh@gmail.com" url="https://github.com/loevaljh/jssorter">jliu</vendor>
 
   <description><![CDATA[
       Sorters for javascript.<br><br>
       Find the options under the Code Menu.<br>
       <ul>
-        <li>Sort imports</li>
+        <li>Sort js imports</li>
         <li>Sort selected lines</li>
         <li>Sort switch cases</li>
       </ul>
