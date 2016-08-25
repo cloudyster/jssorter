@@ -2,7 +2,7 @@
   <id>JSSorter</id>
   <name>JSSorter</name>
   <version>1.0</version>
-  <vendor email="jliu@indeed.com" url="http://www.indeed.com">Indeed</vendor>
+  <vendor email="loevaljh@gmail.com">Sprite CC</vendor>
 
   <description><![CDATA[
       Sorters for javascript.<br><br>
@@ -34,17 +34,17 @@
 
   <actions>
     <!-- Add your actions here -->
-    <action id="JSSorter.sortImports" class="com.indeed.jssorter.actions.JSImportSorter" text="Sort JS Imports"
-          description="Sort JS Imports according to ESLint&#39;s import-sort">
+    <action id="JSSorter.sortImports" class="com.spritecc.jssorter.actions.JSImportSorter" text="Sort JS Imports"
+            description="Sort JS Imports according to ESLint&#39;s import-sort">
       <add-to-group group-id="CodeMenu" anchor="last"/>
       <keyboard-shortcut keymap="$default" first-keystroke="shift alt J"/>
     </action>
-    <action id="JSSorter.sortLines" class="com.indeed.jssorter.actions.JSLineSorter" text="Sort Selected Lines"
+    <action id="JSSorter.sortLines" class="com.spritecc.jssorter.actions.JSLineSorter" text="Sort Selected Lines"
             description="Sort selected lines.">
       <add-to-group group-id="CodeMenu" anchor="last"/>
       <keyboard-shortcut keymap="$default" first-keystroke="shift alt N"/>
     </action>
-    <action id="JSSorter.sortSwitch" class="com.indeed.jssorter.actions.JSSwitchSorter" text="Sort Switch Cases"
+    <action id="JSSorter.sortSwitch" class="com.spritecc.jssorter.actions.JSSwitchSorter" text="Sort Switch Cases"
             description="Sort switch cases.">
       <add-to-group group-id="CodeMenu" anchor="last"/>
       <keyboard-shortcut keymap="$default" first-keystroke="shift alt S"/>

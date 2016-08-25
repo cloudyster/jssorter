@@ -1,4 +1,4 @@
-package com.indeed.jssorter.utils;
+package com.spritecc.jssorter.utils;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;

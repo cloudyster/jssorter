@@ -1,4 +1,4 @@
-package com.indeed.jssorter.actions;
+package com.spritecc.jssorter.actions;
 
 import junit.framework.TestCase;
 import org.junit.Test;
@@ -64,6 +64,6 @@ public class JSImportSorterTest extends TestCase {
         sorter.extractImportsAndSort(doc);
         assertEquals(sortedImports, sorter.getSortedImports());
         assertEquals(2, sorter.importStartLine);
-        assertEquals(13, sorter.importEndLine);
+        assertEquals(5, sorter.importEndLine);
     }
 }
