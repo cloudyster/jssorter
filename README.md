@@ -5,7 +5,8 @@ Implemented sorters:
 - Javascript imports sorter
 
 # How to Install
-Download the [jar](https://github.com/loevaljh/jssorter/blob/master/JSSorter.jar) and In Intellij choose *Install plugin from disk*.
+Search **JSSorter** in the Intellij's plugin dialog. Or
+Download the [jar](https://github.com/loevaljh/jssorter/blob/master/JSSorter.jar) and in the plugin dialog choose *Install plugin from disk*.
 
 ## Lines sorter
 Sort selected lines alphabetically.
