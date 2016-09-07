@@ -21,8 +21,8 @@ public class JSImportSorter extends AnAction {
     private final Comparator<String> IGNORE_OPEN_CURLY_STRING_COMPARATOR = new Comparator<String>() {
         @Override
         public int compare(String o1, String o2) {
-            final String tmp1 = o1.replace("{ ", "");
-            final String tmp2 = o2.replace("{ ", "");
+            final String tmp1 = renameAsItems(o1).replace("{ ", "");
+            final String tmp2 = renameAsItems(o2).replace("{ ", "");
             return tmp1.compareTo(tmp2);
         }
     };
@@ -186,6 +186,22 @@ public class JSImportSorter extends AnAction {
         res.append(" }");
         res.append(line.substring(closeCurly + 1));
         return res.toString();
+    }
+
+    // Turn 'A as B' into 'B'
+    String renameAsItems(final String src) {
+        final String as = " as ";
+        final int asIndex = src.indexOf(as);
+        if (asIndex == -1) {
+            return src;
+        }
+
+        final int dstWordEndIndex = src.indexOf(" ", asIndex + as.length());
+        final String dstWord = src.substring(asIndex + as.length(), dstWordEndIndex);
+        final int orgWordStartIndex = src.lastIndexOf(" ", asIndex - 1) + 1;
+
+        final String newSrc = src.replace(src.substring(orgWordStartIndex, dstWordEndIndex), dstWord);
+        return renameAsItems(newSrc);
     }
 
 }
