@@ -66,4 +66,15 @@ public class JSImportSorterTest extends TestCase {
         assertEquals(2, sorter.importStartLine);
         assertEquals(5, sorter.importEndLine);
     }
+
+    @Test
+    public void testRenameAsItems() {
+        final String src1 = "import A as B from C;";
+        final String dst1 = sorter.renameAsItems(src1);
+        assertEquals("import B from C;", dst1);
+
+        final String src2 = "import { A as B, C as D } from E;";
+        final String dst2 = sorter.renameAsItems(src2);
+        assertEquals("import { B, D } from E;", dst2);
+    }
 }

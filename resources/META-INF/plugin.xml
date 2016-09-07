@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>JSSorter</id>
   <name>JSSorter</name>
-  <version>1.0</version>
+  <version>1.1</version>
   <vendor email="loevaljh@gmail.com" url="https://github.com/loevaljh/jssorter">jliu</vendor>
 
   <description><![CDATA[
@@ -15,7 +15,7 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      1.0 release<br>
+      1.1 fixed bug with 'A as B' imports<br>
     ]]>
   </change-notes>
 
